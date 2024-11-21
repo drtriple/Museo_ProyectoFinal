@@ -40,7 +40,8 @@ class ArtController:
             return "El archivo está vacío."
 
         for artwork in data:
-            if artwork.get("_nombre") == name:
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower():
                 return artwork
 
         return f"No se encontró ninguna obra con el nombre: {name}."
@@ -61,7 +62,8 @@ class ArtController:
         """Actualiza el estado de venta de una obra."""
         data = self.data_access.load_all_artworks()
         for artwork in data:
-            if artwork.get("_nombre") == name:
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower():
                 artwork["_en_venta"] = en_venta
                 self.data_access.save_all_artworks(data)
                 return f"Obra '{name}' actualizada con _en_venta = {en_venta}."
@@ -71,7 +73,8 @@ class ArtController:
         """Actualiza el autor de una obra."""
         data = self.data_access.load_all_artworks()
         for artwork in data:
-            if artwork.get("_nombre") == name:
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower():
                 artwork["_autor"] = autor
                 self.data_access.save_all_artworks(data)
                 return f"Obra '{name}' actualizada con _autor = {autor}."
@@ -81,7 +84,8 @@ class ArtController:
         """Actualiza la técnica de una pintura."""
         data = self.data_access.load_all_artworks()
         for artwork in data:
-            if artwork.get("_nombre") == name and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower() and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
                 artwork["_Pintura__tecnica"] = tecnica
                 self.data_access.save_all_artworks(data)
                 return f"Obra '{name}' actualizada con _Pintura__tecnica = {tecnica}."
@@ -91,7 +95,8 @@ class ArtController:
         """Actualiza el valor de retrato de una pintura."""
         data = self.data_access.load_all_artworks()
         for artwork in data:
-            if artwork.get("_nombre") == name and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower() and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
                 artwork["_Pintura__retrato"] = retrato
                 self.data_access.save_all_artworks(data)
                 return f"Obra '{name}' actualizada con _Pintura__retrato = {retrato}."
@@ -101,7 +106,8 @@ class ArtController:
         """Actualiza las dimensiones de una pintura."""
         data = self.data_access.load_all_artworks()
         for artwork in data:
-            if artwork.get("_nombre") == name and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
+            nombreObra = artwork.get("_nombre")
+            if nombreObra.lower() == name.lower() == name and "tipo_de_obra" in artwork and artwork["tipo_de_obra"] == "Pintura":
                 artwork["_Pintura__dimensiones"] = dimensiones
                 self.data_access.save_all_artworks(data)
                 return f"Obra '{name}' actualizada con _Pintura__dimensiones = {dimensiones}."

@@ -18,17 +18,8 @@
         "tipo_de_obra": "Pintura"
     },
     {
-        "_nombre": "GINA",
-        "_autor": "JUAN",
-        "_en_venta": true,
-        "_Pintura__dimensiones": "180X789",
-        "_Pintura__tecnica": "OLEO",
-        "_Pintura__retrato": true,
-        "tipo_de_obra": "Pintura"
-    },
-    {
         "_nombre": "VALERIA",
-        "_autor": "VALENTINA",
+        "_autor": "BEDOYA",
         "_en_venta": false,
         "_Escultura__volumen": "60",
         "_Escultura__material": "OLL",

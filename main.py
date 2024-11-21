@@ -11,7 +11,7 @@ class viewMain:
             print("2. Agregar Escultura")
             print("3. Ver obra de arte por nombre")
             print("4. Ver obras de arte por tipo")
-            print("5. Actualizar estado de venta")
+            print("5. Actualizar obra de arte")
             print("6. Eliminar obra de arte por nombre")
             print("7. Ver todas las obras de arte")
             print("8. Salir")
