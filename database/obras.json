@@ -2,7 +2,7 @@
     {
         "_nombre": "La Gioconda",
         "_autor": "bedoya",
-        "_en_venta": true,
+        "_en_venta": false,
         "_Pintura__dimensiones": "77 x 53 cm",
         "_Pintura__tecnica": "Témpera",
         "_Pintura__retrato": true,
@@ -15,6 +15,32 @@
         "_Pintura__dimensiones": "77 x 53 cm",
         "_Pintura__tecnica": "Acrílico",
         "_Pintura__retrato": false,
+        "tipo_de_obra": "Pintura"
+    },
+    {
+        "_nombre": "GINA",
+        "_autor": "JUAN",
+        "_en_venta": true,
+        "_Pintura__dimensiones": "180X789",
+        "_Pintura__tecnica": "OLEO",
+        "_Pintura__retrato": true,
+        "tipo_de_obra": "Pintura"
+    },
+    {
+        "_nombre": "VALERIA",
+        "_autor": "VALENTINA",
+        "_en_venta": false,
+        "_Escultura__volumen": "60",
+        "_Escultura__material": "OLL",
+        "tipo_de_obra": "Escultura"
+    },
+    {
+        "_nombre": "VALENTINA",
+        "_autor": "JOSE",
+        "_en_venta": true,
+        "_Pintura__dimensiones": "7488X998",
+        "_Pintura__tecnica": "OL",
+        "_Pintura__retrato": true,
         "tipo_de_obra": "Pintura"
     }
 ]

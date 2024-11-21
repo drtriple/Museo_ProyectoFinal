@@ -1,35 +1,51 @@
-from controller.controllerObradeArte import ArtController
+from view.viewPrincipal import ArtView
 
-controller = ArtController()
-# controller.add_escultura(
-#     nombre="La Gioconda2",
-#     autor="Leonardo da Vinci",
-#     en_venta=False,
-#     volumen="77 x 53 cm",
-#     material="Óleo sobre tabla"
-# )
+class viewMain:
+    def __init__(self):
+            self.view = ArtView()
 
-# controller.add_pintura(
-#     nombre="La Gioconda",
-#     autor="bedoya",
-#     en_venta= True,
-#     dimensiones="77 x 53 cm",
-#     tecnica="Témpera",
-#     retrato = True
-# )
+    def main(self):
+        while True:
+            print("\nOpciones:")
+            print("1. Agregar Pintura")
+            print("2. Agregar Escultura")
+            print("3. Ver obra de arte por nombre")
+            print("4. Ver obras de arte por tipo")
+            print("5. Actualizar estado de venta")
+            print("6. Eliminar obra de arte por nombre")
+            print("7. Ver todas las obras de arte")
+            print("8. Salir")
 
-# controller.add_pintura(
-#     nombre="IPHONE CRISTAL",
-#     autor="bedoya",
-#     en_venta= False,
-#     dimensiones="77 x 53 cm",
-#     tecnica="Acrílico",
-#     retrato = False
-# )
+            option = self.view.prompt_for_input("Seleccione una opción (1-8): ")
 
-#print(type(controller.get_artwork_by_name("La Gioconda255")))
-#print(controller.get_artwork_by_type("Escultura"))
-#print(controller.get_artwork_by_type("Pintura"))
-#r = controller.delete_artwork_by_name("La Gioconda2")
-a = controller.all_view_artwork()
-print(a)
+            if option == "1":
+                self.view.add_artwork_pintura()
+
+            elif option == "2":
+                self.view.add_artwork_escultura()
+
+            elif option == "3":
+                self.view.view_artwork_by_name()
+
+            elif option == "4":
+                self.view.view_artwork_by_type()
+
+            elif option == "5":
+                self.view.update_values()
+
+            elif option == "6":
+                self.view.delete_artwork()
+
+            elif option == "7":
+                self.view.view_all_artwork()
+
+            elif option == "8":
+                self.view.display_message("Saliendo del programa.")
+                break
+
+            else:
+                self.view.display_message("Opción no válida. Por favor, intente de nuevo.")
+
+if __name__ == "__main__":
+    execute = viewMain()
+    execute.main()

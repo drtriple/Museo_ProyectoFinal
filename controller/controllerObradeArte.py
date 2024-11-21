@@ -21,7 +21,7 @@ class ArtController:
         pintura_dict["tipo_de_obra"] = "Pintura"  # Añadimos el tipo de obra
         dto = GenericDTO(pintura_dict)
         save = self.data_access.add_artwork(dto)
-        return save
+        return pintura_dict
 
     def add_escultura(self, nombre, autor, en_venta, volumen, material):
         escultura = Escultura(nombre, autor, en_venta, volumen, material)
@@ -29,7 +29,7 @@ class ArtController:
         escultura_dict["tipo_de_obra"] = "Escultura"  # Añadimos el tipo de obra
         dto = GenericDTO(escultura_dict)
         save =  self.data_access.add_artwork(dto)
-        return save
+        return escultura_dict
         
     def get_artwork_by_name(self, name):
         """
@@ -47,17 +47,15 @@ class ArtController:
         
     def get_artwork_by_type(self, type):
         """
-        Consulta una obra de arte por su tipo.
+        Consulta obras de arte por su tipo.
         """
         data = self.data_access.load_all_artworks()
         if not data:
             return "El archivo está vacío."
 
-        for artwork in data:
-            if artwork.get("tipo_de_obra") == type:
-                return artwork
+        matching_artworks = [artwork for artwork in data if artwork.get("tipo_de_obra", "").lower() == type.lower()]
+        return matching_artworks if matching_artworks else f"No se encontraron obras de tipo: {type}."
 
-        return f"No se encontró ninguna obra con el nombre: {type}."
         
     def update_en_venta(self, name, en_venta):
         """Actualiza el estado de venta de una obra."""
